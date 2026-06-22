@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500彩票网 – 日常查询 · 对照 · 延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fdefe0 0%, #fce3c9 40%, #f7d8b4 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            color: #2e241c;
+        }
+
+        .page {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 30px -12px rgba(120, 70, 30, 0.18),
+                        0 4px 12px rgba(200, 140, 80, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 235, 210, 0.5);
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 40px -12px rgba(130, 70, 20, 0.22);
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: linear-gradient(135deg, #fff6eb, #ffefe0);
+            border-bottom: 4px solid #facc9b;
+            border-radius: 38px 38px 28px 28px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #a7632a, #c57e3e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #5b4636;
+            max-width: 680px;
+            margin: 0 auto 1.2rem;
+            line-height: 1.6;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #dba478;
+            color: #2d1a0c;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            background: #edd3b6;
+            box-shadow: inset 0 0 0 1px #eacbad;
+        }
+
+        /* 两栏优势 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .advantage-item {
+            background: #fcf6ef;
+            border-radius: 28px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 4px 10px rgba(170, 120, 70, 0.05);
+            border-left: 5px solid #e6b787;
+            transition: 0.15s;
+        }
+
+        .advantage-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #754f2d;
+        }
+
+        .advantage-item p {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #3f3227;
+        }
+
+        .advantage-item .emoji-deco {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        /* 说明区 */
+        .detail-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+        }
+
+        .detail-section .left-col {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .detail-section .right-col {
+            flex: 1.1;
+            min-width: 200px;
+            background: #f8efe5;
+            border-radius: 28px;
+            padding: 1.8rem 1.4rem;
+        }
+
+        .detail-section h2 {
+            font-size: 1.7rem;
+            margin-bottom: 0.8rem;
+            color: #603f26;
+            border-left: 6px solid #e1b181;
+            padding-left: 1rem;
+        }
+
+        .detail-section p {
+            margin-bottom: 0.9rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .right-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: #6f4c2e;
+        }
+
+        .right-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .right-col li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #decbb8;
+            font-size: 0.95rem;
+        }
+
+        .right-col li:last-child {
+            border-bottom: none;
+        }
+
+        .right-col .badge {
+            background: #dbaa78;
+            color: #2b1a0c;
+            border-radius: 40px;
+            padding: 0.1rem 0.7rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        /* faq 摘要 */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .faq-item {
+            background: #faf1e7;
+            padding: 1.2rem 1.2rem 1rem;
+            border-radius: 24px;
+            border-bottom: 3px solid #efcdb0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #4e3522;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #4f3d2e;
+            line-height: 1.5;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0 0.2rem;
+            border-top: 2px solid #e5cfba;
+            margin-top: 1rem;
+        }
+
+        .footer-links .link-group a {
+            display: inline-block;
+            color: #603f28;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 0.3rem 0.4rem 0;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            background: #faf1e6;
+            border: 1px solid #edd6be;
+            transition: 0.15s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links .link-group a:hover {
+            background: #e5cbb2;
+            border-color: #c8a585;
+        }
+
+        .footer-meta {
+            color: #6f5542;
+            font-size: 0.85rem;
+        }
+
+        .inline-link {
+            color: #9b6a3e;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #e5bd98;
+            padding-bottom: 1px;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #a3703f;
+            color: #5f3f26;
+        }
+
+        /* 响应式 */
+        @media (max-width: 720px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .detail-section {
+                flex-direction: column;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="card hero">
+        <div class="hero-tag">📋 查询 · 对照 · 延伸</div>
+        <h1>随手查 · 轻松对</h1>
+        <p>平时查号码、翻对照、做笔记，顺手就能完成。<br>
+        不用另开标签页，也不必反复切换——<strong>一个地方，查完即走</strong>。</p>
+        <p style="font-size:0.95rem; margin-top:0.2rem; color:#7d604b;">
+            日常用 <a href="https://zho-500.com" class="inline-link">500彩票网</a> 做查询，已经是很多人的习惯。
+        </p>
+    </div>
+
+    <!-- 优势区 -->
+    <div class="card">
+        <h2 style="margin-bottom:1rem; font-size:1.6rem; color:#603f26;">📌 为什么很多人一直用</h2>
+        <div class="grid-2">
+            <div class="advantage-item">
+                <h3><span class="emoji-deco">🔍</span> 快速对照</h3>
+                <p>打开即用，不用登录，不用等待。历史数据、常规列表都能直接浏览，适合日常随手翻看。</p>
+            </div>
+            <div class="advantage-item">
+                <h3><span class="emoji-deco">📚</span> 延伸阅读</h3>
+                <p>除了基础查询，页面里经常能发现有意思的汇总和分类，适合碎片时间慢慢看。</p>
+            </div>
+            <div class="advantage-item">
+                <h3><span class="emoji-deco">🧩</span> 无干扰</h3>
+                <p>没有弹窗轰炸，没有诱导点击，界面干净，信息都在明处。查完就关，不拖泥带水。</p>
+            </div>
+            <div class="advantage-item">
+                <h3><span class="emoji-deco">📱</span> 手机也好用</h3>
+                <p>响应式排版，卡片清晰，手指点按不费力。通勤路上、排队间隙都能用。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区 + 侧栏场景 -->
+    <div class="card">
+        <div class="detail-section">
+            <div class="left-col">
+                <h2>从日常查询到延伸阅读</h2>
+                <p>很多人打开 <a href="https://zho-500.com" class="inline-link">500彩票网</a> 并不是为了做多复杂的事，就是查个对照、翻翻列表，或者看看最近有什么新的汇总。</p>
+                <p>页面结构很直观：该有的分类都在，用颜色和卡片区分，找东西不需要费脑子。而且每次更新都能看到一些新的条目，像是翻一本总有内容补充的册子。</p>
+                <p>如果你需要固定一个查资料的落脚点，又想偶尔发现点新东西，这里很适合放一个书签。</p>
+            </div>
+            <div class="right-col">
+                <h3>📎 常见使用场景</h3>
+                <ul>
+                    <li>日常号码对照 · 翻查列表</li>
+                    <li>做笔记时顺便核对</li>
+                    <li>整理旧记录，补充信息</li>
+                    <li>碎片时间随意浏览分类</li>
+                    <li>分享给朋友一起对照</li>
+                </ul>
+                <div style="margin-top:1.2rem; font-size:0.9rem; color:#5b4636;">
+                    <span class="badge" style="background:#eac09b;">🔁 习惯成自然</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+        <h2 style="font-size:1.5rem; margin-bottom:1rem; color:#603f26;">❓ 常见小问题 · 摘要</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <span class="q">需要注册才能用吗？</span>
+                <span class="a">完全不需要。打开就能浏览，所有查询和对照功能都是公开的。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">手机和电脑差别大吗？</span>
+                <span class="a">差别不大，页面自适应。手机上看卡片更紧凑，但内容一致。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">数据多久更新一次？</span>
+                <span class="a">不定期更新，但频率稳定。新汇总和分类会陆续补充。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">有下载或打印功能吗？</span>
+                <span class="a">没有专用下载按钮，但内容可直接复制或截图保存。</span>
+            </div>
+        </div>
+        <p style="margin-top:1.2rem; font-size:0.9rem; color:#6f5542;">
+            💡 更多细节可以顺手翻翻 <a href="https://zho-500.com" class="inline-link">500彩票网</a>，很多小问题看着看着就明白了。
+        </p>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <div class="link-group">
+            <a href="https://zho-500.com">500彩票网</a>
+            <a href="https://zho-500.com" style="background:#ede0d1;">500彩票网</a>
+            <a href="https://zho-500.com" style="background:#ede0d1;">500彩票网</a>
+        </div>
+        <div class="footer-meta">
+            · 日常查询 · 对照 · 延伸阅读 ·
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
